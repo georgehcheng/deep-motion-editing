@@ -36,10 +36,10 @@ def main(args):
     trainer.to(config.device)
     trainer.resume()
 
-    co_data = process_single_bvh(args.content_src, config, to_batch=True)
+    co_data = process_single_bvh(args.content_src, config, to_batch=True, downsample=1)
     if args.style_src.endswith('.bvh'):
         status = '3d'
-        st_data = process_single_bvh(args.style_src, config, to_batch=True)
+        st_data = process_single_bvh(args.style_src, config, to_batch=True, downsample=1)
     else:
         status = '2d'
         st_data = process_single_json(args.style_src, config, to_batch=True)

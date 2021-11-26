@@ -38,6 +38,7 @@ def pad_to_window(slice, window):
 
 
 def bvh_to_motion_and_phase(filename, downsample, skel):
+    assert (downsample == 1)
     anim = AnimationData.from_BVH(filename, downsample=downsample, skel=skel)
     full = anim.get_full()  # [T, xxx]
     phases = anim.get_phases()  # [T, 1]
@@ -83,6 +84,7 @@ def divide_clip_bfa(input, window, window_step, divide):
 
 
 def process_file(filename, divider, window, window_step, downsample=4, skel=None, divide=True):
+    assert(downsample == 1)
     input = bvh_to_motion_and_phase(filename, downsample=downsample, skel=skel)  # [T, xxx]
     return divider(input, window=window, window_step=window_step, divide=divide)
 
@@ -198,6 +200,7 @@ def generate_database_xia(bvh_path, output_path, window, window_step, dataset_co
 
 
 def generate_database_bfa(bvh_path, output_path, window, window_step, downsample=4, dataset_config='bfa_dataset.yml'):
+    assert(downsample == 1)
     with open(dataset_config, "r") as f:
         cfg = yaml.load(f, Loader=yaml.Loader)
     style_names = cfg["style_names"]

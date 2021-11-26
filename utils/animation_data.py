@@ -384,6 +384,7 @@ class AnimationData:
 
     @classmethod
     def from_BVH(cls, filename, downsample=4, skel=None, trim_scale=None):
+        assert(downsample == 1)
         anim, names, frametime = BVH.load(filename)
         anim = anim[::downsample]
         if trim_scale is not None:
