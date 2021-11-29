@@ -25,7 +25,7 @@ class Config:
     # data paths
     data_dir = pjoin(BASEPATH, 'data')
     expr_dir = BASEPATH
-    data_filename = "xia.npz"   # change to 'bfa.npz' for training on bfa data
+    data_filename = "style_test.npz"   # change to 'bfa.npz' for training on bfa data
     data_path = pjoin(data_dir, data_filename)
     extra_data_dir = pjoin(data_dir, data_filename.split('.')[-2].split('/')[-1] + "_norms")
 
@@ -85,7 +85,7 @@ class Config:
     proj_channels = 42
 
     num_channel = rot_channels
-    num_style_joints = 22
+    num_style_joints = 21
 
     style_channel_2d = proj_channels
     style_channel_3d = pos3d_channels
