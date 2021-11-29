@@ -149,7 +149,7 @@ def generate_database_xia(bvh_path, output_path, window, window_step, dataset_co
         content_style = "%s_%s" % (content, style)
 
         uclip = motion_and_phase_to_dict(process_file(item, divider=divide_clip_xia, window=window, window_step=window_step,
-                                                      skel=skel, divide=False),
+                                                      skel=skel, divide=False, downsample=1),
                                          style_name_to_idx[style],
                                          {"style": style, "content": content})
         # Whether this should be a test clip
@@ -161,7 +161,7 @@ def generate_database_xia(bvh_path, output_path, window, window_step, dataset_co
         else:
             trainfull_inputs += uclip
             clips = motion_and_phase_to_dict(process_file(item, divider=divide_clip_xia, window=window, window_step=window_step,
-                                                          skel=skel, divide=True),
+                                                          skel=skel, divide=True, downsample=1),
                                              style_name_to_idx[style],
                                              {"style": style, "content": content})
             train_inputs += clips
