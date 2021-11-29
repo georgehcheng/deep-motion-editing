@@ -144,8 +144,8 @@ def generate_database_xia(bvh_path, output_path, window, window_step, dataset_co
     for i, item in enumerate(bvh_files):
         print('Processing %i of %i (%s)' % (i, len(bvh_files), item))
         filename = item.split('/')[-1]
-        style, content_idx, _ = filename.split('_')
-        content = content_namedict[int(content_idx) - 1]
+        style = filename.split('_')[5]
+        content = "walk"
         content_style = "%s_%s" % (content, style)
 
         uclip = motion_and_phase_to_dict(process_file(item, divider=divide_clip_xia, window=window, window_step=window_step,

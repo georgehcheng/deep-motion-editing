@@ -85,7 +85,7 @@ class Config:
     proj_channels = 42
 
     num_channel = rot_channels
-    num_style_joints = 21
+    num_style_joints = 22
 
     style_channel_2d = proj_channels
     style_channel_3d = pos3d_channels

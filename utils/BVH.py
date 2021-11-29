@@ -148,7 +148,7 @@ def load(filename, start=None, end=None, order=None, world=False):
             if   channels == 3:
                 # This should be root positions[0:1] & all rotations
                 positions[fi,0:1] = data_block[0:3]
-                rotations[fi, : ] = data_block[3: ].reshape(N,3)
+                rotations[fi, : ] = data_block[3: ].reshape(-1,3)[:N,:]
             elif channels == 6:
                 data_block = data_block.reshape(N,6)
                 # fill in all positions
