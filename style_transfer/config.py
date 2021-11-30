@@ -80,7 +80,7 @@ class Config:
     }
 
     # input: T * 64
-    rot_channels = 128  # added one more y-axis rotation
+    rot_channels = 520#128  # added one more y-axis rotation
     pos3d_channels = 64  # changed to be the same as rfree
     proj_channels = 42
 
@@ -130,7 +130,7 @@ class Config:
     dec_resblks = enc_co_resblks
     dec_channels = enc_co_channels.copy()
     dec_channels.reverse()
-    dec_channels[-1] = 31 * 4  # Let it output rotations only
+    dec_channels[-1] = 129 * 4#31 * 4  # Let it output rotations only
     dec_up_n = enc_co_down_n
     dec_kernel_size = 8
     dec_stride = 1
