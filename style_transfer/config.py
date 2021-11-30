@@ -13,7 +13,7 @@ class Config:
     for_try = False  # set to True only if you want to quickly check if all parts (latent space visualization, result output, etc.) function correctly 
 
     # Save & Visualization
-    name = 'pretrained'     # name of the experiment, for training from scratch please use a different name
+    name = 'george'     # name of the experiment, for training from scratch please use a different name
 
     cuda_id = 0
 
@@ -153,7 +153,7 @@ class Config:
     disc_pool_size = 3
     disc_pool_stride = 2
 
-    num_classes = 8         # set to 16 for training on bfa data
+    num_classes = 11         # set to 16 for training on bfa data
 
     gan_w = 1
     rec_w = 1
